@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  street_address: MyText
+  city: MyString
+  country: MyString
+  lat: 1.5
+  long: 1.5
+  avg_household_income: 1.5
+  avg_individual_income: 1.5
+  public_transit_commute_percent: 1.5
+  walking_commute_percent: 1.5
+  bike_commute_percent: 1.5
+  drive_commute_percent: 1.5
+  last_demo_update: 2023-02-12
+
+two:
+  name: MyString
+  street_address: MyText
+  city: MyString
+  country: MyString
+  lat: 1.5
+  long: 1.5
+  avg_household_income: 1.5
+  avg_individual_income: 1.5
+  public_transit_commute_percent: 1.5
+  walking_commute_percent: 1.5
+  bike_commute_percent: 1.5
+  drive_commute_percent: 1.5
+  last_demo_update: 2023-02-12

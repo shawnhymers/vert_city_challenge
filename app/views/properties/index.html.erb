@@ -1,0 +1,133 @@
+<%= form_with model: @property, url: reset_properties_path(), method: :post, local: true do |f| %>
+    <%= f.submit "Reset All Properties Demo Data"%>
+<% end %>
+<%= form_with model: @property, url: all_properties_path(), method: :patch, local: true do |f| %>
+    <%= f.submit "Update Demo Data For All properties"%>
+  <% end %>
+<ul>
+  <% @properties.each do |property| %>
+    <li>
+      <%= property.name%><%=", " %>
+      <%= property.street_address%><%=", " %>
+      <%= property.city%><%=", " %>
+      <%= property.country%>
+      
+    </li>
+    <table>
+        <tr>
+        <td>
+            <%="Average Household Income: " %>
+            <%= property.avg_household_income%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <%="Average Individual Income: " %>
+            <%= property.avg_individual_income%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <%="Average % of Walking Commuters: " %>
+            <%= property.walking_commute_percent%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <%="Average % of Public Transit Commuters: " %>
+            <%= property.public_transit_commute_percent%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <%="Average % of Biking Commuters: " %>
+            <%= property.bike_commute_percent%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <%="Average % of Driving Commuters: " %>
+            <%= property.drive_commute_percent%>
+        </td>
+        </tr>
+    </table>
+
+    <%= form_with model: @property, url: update_properties_path(property_id: property.id), method: :patch, local: true do |f| %>
+        <%= f.submit "Update Demo Data For This Property"%>
+    <% end %>
+    
+    <%= form_with model: @property, url: delete_properties_path(property_id: property.id), method: :delete, local: true do |f| %>
+        <%= f.submit "Delete this property"%>
+    <% end %>
+  <% end %>
+
+
+  <%= form_with model: @property, url: new_properties_path(), method: :patch, local: true do |f| %>
+    <table>
+        <tr>
+        <td>
+            <p>"Building Name:"</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.text_field :name %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <p>"Street Address:"</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.text_field :street_address %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <p>"City:"</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.text_field :city %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <p>"Country:"</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.text_field :country %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <p>"Lat:"</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.number_field :lat ,step: 0.001%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <p>"Long:"</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.number_field :long ,step: 0.001%>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <%= f.submit "Create New Property"%>
+    </table>
+  <% end %>
+</ul>
+
