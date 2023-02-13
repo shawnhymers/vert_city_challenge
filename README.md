@@ -1,5 +1,7 @@
 # README
 
+Built with Ruby 3.1.2 and Rails 7.0.4.2 
+
 To get started
 
 1. Run the DB migration by running the following in the project directory bin/rails db:migrate RAILS_ENV=development 
